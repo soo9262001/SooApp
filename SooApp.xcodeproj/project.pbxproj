@@ -17,6 +17,7 @@
 		253ED1F4272518B400B3D4E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 253ED1F3272518B400B3D4E9 /* Assets.xcassets */; };
 		253ED1F7272518B400B3D4E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 253ED1F5272518B400B3D4E9 /* LaunchScreen.storyboard */; };
 		253ED1FF27252B5300B3D4E9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253ED1FE27252B5300B3D4E9 /* ProfileViewController.swift */; };
+		25B77767273AA24A005AD450 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 25B77766273AA24A005AD450 /* GoogleService-Info.plist */; };
 		BE4689A8182F17EAEF791F79 /* Pods_SooApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA23B1E943746722E222826E /* Pods_SooApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +34,7 @@
 		253ED1F6272518B400B3D4E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		253ED1F8272518B400B3D4E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		253ED1FE27252B5300B3D4E9 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		25B77766273AA24A005AD450 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7F87B8FFDBB83DA659FCA6B5 /* Pods-SooApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SooApp.debug.xcconfig"; path = "Target Support Files/Pods-SooApp/Pods-SooApp.debug.xcconfig"; sourceTree = "<group>"; };
 		813F5D15281058EF2230D193 /* Pods-SooApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SooApp.release.xcconfig"; path = "Target Support Files/Pods-SooApp/Pods-SooApp.release.xcconfig"; sourceTree = "<group>"; };
 		BA23B1E943746722E222826E /* Pods_SooApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SooApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,6 +100,7 @@
 				253ED1F3272518B400B3D4E9 /* Assets.xcassets */,
 				253ED1F5272518B400B3D4E9 /* LaunchScreen.storyboard */,
 				253ED1F8272518B400B3D4E9 /* Info.plist */,
+				25B77766273AA24A005AD450 /* GoogleService-Info.plist */,
 			);
 			path = SooApp;
 			sourceTree = "<group>";
@@ -131,6 +134,7 @@
 				253ED1E4272518AD00B3D4E9 /* Frameworks */,
 				253ED1E5272518AD00B3D4E9 /* Resources */,
 				F8AC3F72195048947D813F1C /* [CP] Embed Pods Frameworks */,
+				2E00473D175833B4A3B912F3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -182,6 +186,7 @@
 				253ED1F7272518B400B3D4E9 /* LaunchScreen.storyboard in Resources */,
 				253ED1F4272518B400B3D4E9 /* Assets.xcassets in Resources */,
 				253ED1F2272518AD00B3D4E9 /* Main.storyboard in Resources */,
+				25B77767273AA24A005AD450 /* GoogleService-Info.plist in Resources */,
 				2525C3D227343F0800F78FCD /* Home.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -189,6 +194,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2E00473D175833B4A3B912F3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SooApp/Pods-SooApp-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SooApp/Pods-SooApp-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SooApp/Pods-SooApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		3B90009B328E1838B06A02A9 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

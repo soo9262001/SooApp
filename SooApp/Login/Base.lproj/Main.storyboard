@@ -28,16 +28,33 @@
                                     <action selector="kakaoLoginBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lMh-FH-S3k"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J7f-px-Roh" customClass="GIDSignInButton">
+                                <rect key="frame" x="30" y="632" width="354" height="50"/>
+                                <color key="backgroundColor" systemColor="tintColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="354" id="NlZ-kh-ndr"/>
+                                    <constraint firstAttribute="height" constant="50" id="eh2-Oj-Zkc"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="googleLoginBtn:" destination="BYZ-38-t0r" eventType="valueChanged" id="NQe-bJ-UdZ"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QKI-rL-P14" secondAttribute="trailing" constant="30" id="5ls-Ne-qax"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="J7f-px-Roh" secondAttribute="trailing" constant="30" id="F1W-o3-pk5"/>
                             <constraint firstItem="QKI-rL-P14" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="RjH-l0-dDj"/>
+                            <constraint firstItem="J7f-px-Roh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="ath-7h-Gtr"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="QKI-rL-P14" secondAttribute="bottom" constant="100" id="jAh-2K-FJ0"/>
+                            <constraint firstItem="QKI-rL-P14" firstAttribute="top" secondItem="J7f-px-Roh" secondAttribute="bottom" constant="30" id="qTW-Th-3of"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="CFK-zv-uSk"/>
+                    <connections>
+                        <outlet property="googleLoginBtn" destination="J7f-px-Roh" id="tio-kR-Lsk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -66,6 +83,9 @@
         <image name="kakao_login_medium_wide" width="300" height="45"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tintColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

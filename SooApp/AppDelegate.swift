@@ -7,17 +7,45 @@
 
 import UIKit
 import KakaoSDKCommon
+import Firebase
+import GoogleSignIn
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         KakaoSDKCommon.initSDK(appKey: "7a13c638846c06879b065ceecf939260")
         
+        GIDSignIn.sharedInstance()?.clientID = "631727649982-r5jdbst9uah32nu3vfbp5f4a59a0ugpn.apps.googleusercontent.com"
+        
+            GIDSignIn.sharedInstance()?.delegate = self
+        
         return true
     }
     
+    
+    public static var user: GIDGoogleUser!
+        
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        if let error = error {
+            if(error as NSError).code == GIDSignInErrorCode.hasNoAuthInKeychain.rawValue {
+                print("not signed in before or signed out")
+            } else {
+                print(error.localizedDescription)
+            }
+        }
+        
+        // singleton 객체 - user가 로그인을 하면, AppDelegate.user로 다른곳에서 사용 가능
+        AppDelegate.user = user
+        
+        return
+    }
+    
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        return (GIDSignIn.sharedInstance()?.handle(url))!
+    }
     
 
     // MARK: UISceneSession Lifecycle

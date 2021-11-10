@@ -9,12 +9,19 @@ import UIKit
 import KakaoSDKUser
 import KakaoSDKAuth
 import KakaoSDKCommon
+import GoogleSignIn
+import Firebase
 
 class LoginViewController: UIViewController {
-
+        
+    @IBOutlet weak var googleLoginBtn: GIDSignInButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         hadtoken()
+        GIDSignIn.sharedInstance()?.presentingViewController = self // 로그인화면 불러오기
+        GIDSignIn.sharedInstance()?.restorePreviousSignIn() // 자동로그인
+        googleLoginBtn.style = .wide
     }
 
     private func hadtoken() {
@@ -38,6 +45,11 @@ class LoginViewController: UIViewController {
     @IBAction func kakaoLoginBtn(_ sender: UIButton) {
         kakaoLogin()
     }
+    
+    @IBAction func googleLoginBtn(_ sender: Any) {
+        GIDSignIn.sharedInstance().signIn()
+    }
+    
     
 }
 
@@ -98,4 +110,14 @@ extension LoginViewController {
 //        }
     }
     
+
+    
 }
+
+//extension LoginViewController: GIDSignInDelegate {
+//    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+//        if let authentication = user.authentication {
+//            print("\(authentication)")
+//        }
+//    }
+//}
